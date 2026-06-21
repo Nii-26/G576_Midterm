@@ -1,0 +1,30 @@
+/* Styling for overall map container */
+html,             /*apply this to the HTML element*/
+body,             /*apply this to the body element*/
+#viewDiv {        /*apply this to the viewDiv element*/
+  padding: 0;     /*no borders*/
+  margin: 0;
+  height: 100vh;   /*make this map as tall and wide as the screen*/
+  width: 100vw;
+  overflow: hidden;
+}
+
+/*Styling for survey link button */
+.addRecordBtn {
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  right: 10px;
+  background-color: #0079c1;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.addRecordBtn:hover {
+  background-color: #005a87;
+}
