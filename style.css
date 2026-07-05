@@ -1,0 +1,11 @@
+/* Styling for overall map container */
+html,             /*apply this to the HTML element*/
+body,             /*apply this to the body element*/
+#viewDiv {        /*apply this to the viewDiv element*/
+  padding: 0;     /*no borders*/
+  margin: 0;
+  height: 100vh;   /*make this map as tall and wide as the screen*/
+  width: 100vw;
+  overflow: hidden;
+}
+

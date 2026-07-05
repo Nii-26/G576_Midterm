@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>           <!--sets the document type- required-->
+<html lang="en">          <!--sets the language the browser should render the page in-->
+
+<head>                    <!--not visible in browser, but necessary-->
+  <meta charset="utf-8">   <!--standard part of page building-->
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />  <!--makes the page resize for mobile devices-->
+                            <!-- (content="initial-scale=1") sets the initial zoom level when the page first loads")-->
+                             <!-- (content="maximum-scale=1") sets the maximum zoom level allowed by the user -->
+                             <!-- (content="user-scalable=no") disables the user's ability to zoom in or out using pinch to zoom -->
+  <title> G576 Midterm </title>
+
+  <!--importing css and libraries for esri.js-->
+  <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css">  <!--linking to ESRI API's stylesheet-->
+  <script src="https://js.arcgis.com/4.26/"></script> <!--script tag for ESRI API's JS. We want this to load before the page starts drawing the body features-->
+
+
+<!--linking to my own CSS file-->
+ <link rel="stylesheet" href="style.css">   <!--linking to my own stylesheet here-->
+
+</head>
+
+<body>                    <!--visible on browser-->
+  <div id="viewDiv"></div>  <!--creates a div element for the ArcGIS API script to fill-->
+  <script src="main.js"></script>   <!--script tag for our own JS script-->
+
+</body>
+
+</html>                   <!--closes the "this is all HTML section"-->
