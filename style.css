@@ -1,4 +1,4 @@
-/* 1. Global Setup */
+/* Global setup */
 html, body {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ html, body {
   overflow: hidden;       
 }
 
-/* 2. Header Styling (Updated to target #titleDiv) */
+/* Header styling  */
 #titleDiv {
   height: 40px;
   width: 100%;
@@ -30,7 +30,7 @@ html, body {
   letter-spacing: 0.5px;
 }
 
-/* 3. Map Container Styling */
+/* Map Container Styling */
 #viewDiv {
   flex-grow: 1; 
   width: 100%;  

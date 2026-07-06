@@ -53,7 +53,7 @@ require([                         // Links back to ESRI API's files (one of the 
     url: MAP_CONFIG.urls.inputLayer
   });
 
-  // 1. Define the symbol
+  // Create symbol for usage as point marker
   const birdSymbol = {
     type: "picture-marker",
    url: "https://raw.githubusercontent.com/Nkositzke22/G576_Midterm/main/bird_icon_glow.png",
@@ -61,25 +61,25 @@ require([                         // Links back to ESRI API's files (one of the 
    height: "32px"
   };
 
-  // 2. Define the renderer
+  // Creates a renderer object for my birdSymbol
   const birdRenderer = {
-    type: "simple", // This must be "simple" for a feature layer
+    type: "simple", // Every feature in my inputLayer will use the same symbol
     symbol: birdSymbol
   };
 
-  // 3. Apply it to your layer
+  // Applies the renderer to my layer
   inputLayer.renderer = birdRenderer;
   
   // ==========================================
   // 4. UI/WIDGETS
   // ==========================================
     //Creating the widgets
-  const searchWidget = new Search({     // creates the search  widget 
-    view:view                           // links widget to specific map view (widget needs to know which map view to search)
+  const searchWidget = new Search({     // Creates the search  widget 
+    view:view                           // Links widget to specific map view (widget needs to know which map view to search)
   });
 
-  const locateBtn = new Locate({        // creates the locate button widget
-    view: view                          // links widget to specific map view
+  const locateBtn = new Locate({        // Creates the locate button widget
+    view: view                          // Links widget to specific map view
   });
 
 
@@ -87,55 +87,55 @@ require([                         // Links back to ESRI API's files (one of the 
     //Nesting widgets
   const searchExpand = new Expand({     
     view: view,
-    content: searchWidget,              // tells the Expand container to hold the search widget
-    expandIcon: "search"                // tells the UI to display the universal Search icon when the exand widget is closed
+    content: searchWidget,              // Tells the Expand container to hold the search widget
+    expandIcon: "search"                // Tells the UI to display the universal Search icon when the exand widget is closed
   });
 
   const locateExpand = new Expand({     
     view: view,
-    content: locateBtn,              // tells the Expand container to hold the locate button widget
-    expandIcon: "locate"                // tells the UI to display the universal Locate icon when the exand widget is closed
+    content: locateBtn,              // Tells the Expand container to hold the locate button widget
+    expandIcon: "locate"                // Tells the UI to display the universal Locate icon when the exand widget is closed
   });
 
-  const editor = new Editor({
+  const editor = new Editor({   // Sets up the editor panel
     view: view,
     layerInfos: [{
-        layer: inputLayer, // This references your FeatureLayer
+        layer: inputLayer, // Applies the Editor to my featureLayer
         addEnabled: true,
         updateEnabled: true,
         deleteEnabled: true
     }]
   });
 
-  const editorExpand = new Expand({
+  const editorExpand = new Expand({ // Wraps the Editor in an Expand panel
     view: view,
     content: editor, 
-    expandIcon: "pencil",
+    expandIcon: "pencil",   // Sets the icon for the Expand Editor wrapper
     group: "top-left"
   });
 
     //- Adding widgets to view
-  view.ui.add(searchExpand, {           // adds the searchExpand widget to the map view      
-    position: "top-left",               // positions the widget
-    index: 0                            // stacks at the top of the expand stack (top corner of screen)
+  view.ui.add(searchExpand, {           // Adds the searchExpand widget to the map view      
+    position: "top-left",               // Positions the widget
+    index: 0                            // Stacks at the top of the expand stack (top corner of screen)
   });
 
-  view.ui.add(locateExpand, {             // adds the locate button widget to the map view
-    position: "top-left",               // positions the widget
-    index: 1                            // stacks at the top of the expand stack (top corner of screen)
+  view.ui.add(locateExpand, {             // Adds the locate button widget to the map view
+    position: "top-left",               // Positions the widget
+    index: 1                            // Stacks at the top of the expand stack (top corner of screen)
   });
 
-  view.ui.add(editorExpand, "top-left");
+  view.ui.add(editorExpand, "top-left");    // Adds the expand widget to the map view, and positions it at the top left under the search and locate widgets
 
   // ==========================================
   // 5. HANDLING ERRORS
   // ==========================================
-  locateBtn.on("locate-error", (event) => {     // listen for errors on the Locate button
+  locateBtn.on("locate-error", (event) => {     // Listen for errors on the Locate button
     console.error("Locate Widget Error:", event.error);
     alert("Unable to find your location. Please check your phone's privacy settings or ensure your GPS signal is strong.");
   });
 
-  inputLayer.load().catch((error) => {               // catch errors when the layer fails to load
+  inputLayer.load().catch((error) => {               // Catch errors when the layer fails to load
     console.error("Layer Load Error:", error);
     alert("Failed to load the layer. Please try again later.");
   });
@@ -145,6 +145,6 @@ require([                         // Links back to ESRI API's files (one of the 
   // 6. SCRIPT EXECUTION
   // ==========================================
     map.add(inputLayer);
-  //map.addMany([nativevillage, usAirports, usHeliports, airports2]);
+
 
 });
