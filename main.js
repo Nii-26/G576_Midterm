@@ -57,7 +57,7 @@ require([                         // Links back to ESRI API's files (one of the 
   // Feature Layers [H. McBride: Added outfields and popup to the feature layer, 07/08/2026]
   const inputLayer = new FeatureLayer({
     url: MAP_CONFIG.urls.inputLayer,
-    outfields: ["Bird_Type", "Sighting_Time"],
+    outFields: ["Bird_Type", "Sighting_Time"],
     popupTemplate: popupBirds
   });
 
