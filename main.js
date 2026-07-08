@@ -54,7 +54,7 @@ require([                         // Links back to ESRI API's files (one of the 
   // Graphics logic
 
 
-  // Feature Layers [H. McBride: Added popup to the feature layer, 07/08/2026]
+  // Feature Layers [H. McBride: Added outfields and popup to the feature layer, 07/08/2026]
   const inputLayer = new FeatureLayer({
     url: MAP_CONFIG.urls.inputLayer,
     outfields: ["Bird_Type", "Sighting_Time"],
