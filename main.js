@@ -64,7 +64,7 @@ require([                         // Links back to ESRI API's files (one of the 
     type: "simple-marker",
     style: "circle",
     size: "12px",
-    color: [46, 204, 113, 0.95],
+    color: [57, 255, 20, 0.95],
     outline: {
       color: [255, 255, 255, 0.9],
       width: 1.5
