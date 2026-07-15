@@ -62,7 +62,7 @@ require([                         // Links back to ESRI API's files (one of the 
   // Create symbol for usage as point marker
   const birdSymbol = {
     type: "picture-marker",
-    url: "./bird_icon_green.svg",
+    url: "https://raw.githubusercontent.com/Nkositzke22/G576_Midterm/main/bird_icon_glow.png",
     width: "32px",
     height: "32px"
   };
