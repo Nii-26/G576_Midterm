@@ -88,6 +88,10 @@ require([                         // Links back to ESRI API's files (one of the 
     view: view                          // Links widget to specific map view
   });
 
+  const basemapGallery = new BasemapGallery({ // Creates a gallery with multiple basemap choices
+    view: view
+  });
+
 
 
     //Nesting widgets
@@ -101,6 +105,13 @@ require([                         // Links back to ESRI API's files (one of the 
     view: view,
     content: locateBtn,              // Tells the Expand container to hold the locate button widget
     expandIcon: "locate"                // Tells the UI to display the universal Locate icon when the exand widget is closed
+  });
+
+  const basemapExpand = new Expand({
+    view: view,
+    content: basemapGallery,         // Tells the Expand container to hold the basemap gallery widget
+    expandIcon: "basemap",          // Shows basemap icon while collapsed
+    group: "top-left"
   });
 
   const editor = new Editor({   // Sets up the editor panel
@@ -132,6 +143,11 @@ require([                         // Links back to ESRI API's files (one of the 
   });
 
   view.ui.add(editorExpand, "top-left");    // Adds the expand widget to the map view, and positions it at the top left under the search and locate widgets
+
+  view.ui.add(basemapExpand, {
+    position: "top-left",
+    index: 2
+  });
 
   // ==========================================
   // 5. HANDLING ERRORS
