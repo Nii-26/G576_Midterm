@@ -1,5 +1,4 @@
 require([                         // Links back to ESRI API's files (one of the src's we linked above)
-  "esri/config",                  // AMD (Autonomous Module Definition) standard- grab the libraries we need. This one specifically gives access to master settings
   "esri/Map",
   "esri/views/MapView",
   "esri/Graphic",
@@ -13,8 +12,7 @@ require([                         // Links back to ESRI API's files (one of the 
   "esri/symbols/PictureMarkerSymbol",
   "esri/renderers/SimpleRenderer",
 
-], function (esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Editor, Expand, BasemapGallery, Locate, Search, PictureMarkerSymbol, SimpleRenderer) {
-    //esriConfig.apiKey = "AAPTau7l9zV1JqiD1DBhryF-CPg..ZLSOcbqgh0ONE2slQEiaTqrrUI9TlEQg-3ZfWtrR-Ur2oKQRwsv-KCdLKsARwQBmPGaG2FKABsW3UmmWIU-XJKOMLXRXHIwIGTZ-em8fZ6ln7jgXILnyk_sdiPEmyHHJ2R3aewVZeHoN_D5zBlUrSDh34lDuLWb8Pqkd_AZTEeTKoUFodKYWH-GFpwherADvTOzXsWe5qGAf9LXl64x-tfRA3Ohh_KUnBRvjZni6S_7xIgaT4DTFIQZ8DMMEk0vvSSN_JwLUAT1_WThHLKNd"
+], function (Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Editor, Expand, BasemapGallery, Locate, Search, PictureMarkerSymbol, SimpleRenderer) {
 
   // ==========================================
   // 1. GLOBAL CONSTANTS AND CONFIG
@@ -64,7 +62,7 @@ require([                         // Links back to ESRI API's files (one of the 
   // Create symbol for usage as point marker
   const birdSymbol = {
     type: "picture-marker",
-   url: "https://raw.githubusercontent.com/Nkositzke22/G576_Midterm/main/bird_icon_glow.png",
+   url: "bird_icon_glow.png",
    width: "32px",
    height: "32px"
   };
