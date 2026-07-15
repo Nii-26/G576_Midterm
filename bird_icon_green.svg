@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Green bird icon">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#glow)">
+    <path d="M6 38c8-11 16-16 26-17 2 0 3-2 4-4 3-5 9-7 14-5-4 1-6 4-5 8 2-2 5-3 8-2-3 2-5 5-5 9 0 6-5 10-11 11-5 1-8 3-10 7-2 4-5 7-10 7 3-3 4-6 3-9-6 2-10 1-14-5z"
+      fill="#39ff14"/>
+    <path d="M42 18c1-2 3-3 6-3" fill="none" stroke="#eaffea" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="36" cy="24" r="1.6" fill="#ecffec"/>
+  </g>
+</svg>
