@@ -10,10 +10,8 @@ require([                         // Links back to ESRI API's files (one of the 
   "esri/widgets/BasemapGallery",
   "esri/widgets/Locate",
   "esri/widgets/Search",
-  "esri/symbols/PictureMarkerSymbol",
-  "esri/renderers/SimpleRenderer",
 
-], function (esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Editor, Expand, BasemapGallery, Locate, Search, PictureMarkerSymbol, SimpleRenderer) {
+], function (esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Editor, Expand, BasemapGallery, Locate, Search) {
     //esriConfig.apiKey = "AAPTau7l9zV1JqiD1DBhryF-CPg..ZLSOcbqgh0ONE2slQEiaTqrrUI9TlEQg-3ZfWtrR-Ur2oKQRwsv-KCdLKsARwQBmPGaG2FKABsW3UmmWIU-XJKOMLXRXHIwIGTZ-em8fZ6ln7jgXILnyk_sdiPEmyHHJ2R3aewVZeHoN_D5zBlUrSDh34lDuLWb8Pqkd_AZTEeTKoUFodKYWH-GFpwherADvTOzXsWe5qGAf9LXl64x-tfRA3Ohh_KUnBRvjZni6S_7xIgaT4DTFIQZ8DMMEk0vvSSN_JwLUAT1_WThHLKNd"
 
   // ==========================================
@@ -63,10 +61,14 @@ require([                         // Links back to ESRI API's files (one of the 
 
   // Create symbol for usage as point marker
   const birdSymbol = {
-    type: "picture-marker",
-   url: "https://raw.githubusercontent.com/Nkositzke22/G576_Midterm/main/bird_icon_glow.png",
-   width: "32px",
-   height: "32px"
+    type: "simple-marker",
+    style: "circle",
+    size: "12px",
+    color: [46, 204, 113, 0.95],
+    outline: {
+      color: [255, 255, 255, 0.9],
+      width: 1.5
+    }
   };
 
   // Creates a renderer object for my birdSymbol
